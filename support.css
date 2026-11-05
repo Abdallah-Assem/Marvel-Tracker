@@ -1,0 +1,20 @@
+.support-section{margin:1rem auto 0;padding-top:1rem}
+.support-panel{padding:clamp(1.25rem,4vw,2.5rem);border:1px solid #d3ea7a30;border-radius:1rem;background:radial-gradient(ellipse at top left,#7fb08a18,transparent 65%),#0b130ed9}
+.support-eyebrow{margin:0 0 .65rem;color:var(--sage);font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.support-panel h2{font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 .65rem;color:var(--bone)}
+.support-intro{color:var(--muted);max-width:40rem;font-size:.9rem;line-height:1.7;margin:0 0 1.5rem}
+.support-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.support-option{padding:1.2rem;border:1px solid var(--line);border-radius:.65rem;background:#050a0766;min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+.support-method{display:flex;align-items:center;gap:.65rem;color:var(--bone);font-size:1rem;font-weight:700;line-height:1.25;min-height:36px;margin:0 0 .8rem}
+.support-logo{position:relative;display:block;flex:0 0 48px;width:48px;height:36px;overflow:hidden;border-radius:6px;background:#f5f3ed}
+.support-logo img{position:absolute;display:block;left:50%;top:50%;width:68px!important;max-width:none!important;height:auto!important;transform:translate(-50%,-50%)}
+.support-logo-paypal img{width:56px!important;transform:translate(-50%,-55%)}
+.support-option p{font-size:.8rem;line-height:1.6;color:var(--muted);margin:0 0 .9rem}
+.support-action{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;padding:.6rem 1rem;border-radius:.4rem;border:1px solid #d3ea7a66;background:#d3ea7a12;color:var(--glow);font:600 .8rem 'Montserrat',system-ui,sans-serif;text-decoration:none;cursor:pointer;transition:background .2s,border-color .2s}
+.support-action:hover{background:#d3ea7a25;color:var(--glow);border-color:var(--glow)}
+.support-paypal{background:#f5c518;border-color:#f5c518;color:#171400;margin-top:auto}
+.support-paypal:hover{background:#ffe16b;border-color:#ffe16b;color:#171400}
+.support-address{display:block;width:100%;min-width:0;margin:0 0 .75rem;padding:.65rem .75rem;border:1px solid var(--line);border-radius:.35rem;background:#050a07;color:var(--bone);font:500 .85rem system-ui,sans-serif}
+.support-status{font-size:.8rem;color:var(--sage);min-height:1.4em;margin:.8rem 0 0}
+@media(max-width:575px){.support-options{grid-template-columns:1fr}.support-option{padding:1rem}.support-action{width:100%}}
+@media(prefers-reduced-motion:reduce){.support-action{transition:none}}

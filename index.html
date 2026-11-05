@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Road to Doomsday: MCU watch guide</title>
+<meta name="description" content="Everything to watch before Avengers: Doomsday, with your progress saved on this device.">
+<link rel="preload" as="image" href="doom-bg.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+:root{--ink:#050a07;--glow:#d3ea7a;--sage:#7fb08a;--grey:#9fb0a3;--bone:#ecefe6;--muted:#a3b0a6;--line:#ffffff1a;
+--bs-body-bg:var(--ink);--bs-body-color:var(--bone);--bs-body-font-family:'Montserrat',system-ui,sans-serif}
+body{background:var(--ink)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(#050a07e8,#050a07e8),url(doom-bg.jpg) 72% center/cover no-repeat}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;text-wrap:balance}
+:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
+
+/* ── Entrance animations ── */
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+@keyframes progress-shine{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){
+  @keyframes rise{from{}to{}}
+  @keyframes bounce{0%,100%{}50%{}}
+  @keyframes progress-shine{0%{}100%{}}
+  *{transition:none!important;animation:none!important}
+}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;padding:1.5rem 0 3rem;
+background:linear-gradient(to top,#050a07 0,#050a0700 45%),linear-gradient(90deg,#050a07c0 0,#050a0700 60%),url(doom-bg.jpg) 72% center/cover no-repeat}
+.brand{font-weight:600;letter-spacing:.08em;font-size:.95rem}
+.hero-main{flex:1;display:flex;align-items:center}
+.hero h1{font-weight:900;font-size:clamp(2.8rem,8.5vw,6.5rem);line-height:.92;letter-spacing:-.02em;margin:0}
+.hero .lede{max-width:30rem;color:var(--muted);margin:1.25rem 0 1.75rem;text-wrap:pretty}
+.hero-main>div>*{animation:rise .7s ease-out backwards}
+.hero-main>div>*:nth-child(1){animation-delay:.1s}
+.hero-main>div>*:nth-child(2){animation-delay:.25s}
+.hero-main>div>*:nth-child(3){animation-delay:.4s}
+.count{animation:rise .7s ease-out .55s backwards}
+.btn-glow{background:var(--glow);color:#10180a;font-weight:600;border:0;padding:.7rem 1.5rem;border-radius:.25rem;transition:background .2s,transform .15s}
+.btn-glow:hover{background:#e4f59a;color:#10180a}
+.btn-glow:active{transform:scale(.97)}
+
+/* Scroll cue */
+.scroll-cue{position:absolute;bottom:1.2rem;left:50%;translate:-50% 0;color:var(--muted);opacity:.6;transition:opacity .2s,color .2s;animation:bounce 2s infinite;line-height:0}
+.scroll-cue:hover{color:var(--glow);opacity:1}
+
+/* Counter */
+.count{text-align:center}
+.coming{font-weight:600;letter-spacing:.42em;text-transform:uppercase;font-size:clamp(.8rem,2.4vw,1.35rem);margin:0 0 1rem;padding-left:.42em}
+.units{display:flex;justify-content:center;align-items:flex-start;gap:clamp(.4rem,2vw,1.2rem)}
+.u{min-width:clamp(3rem,11vw,7rem)}
+.u b{display:block;font-weight:600;font-size:clamp(2rem,8vw,4.6rem);line-height:1;font-variant-numeric:tabular-nums;will-change:contents}
+.u span{display:block;margin-top:.6rem;font-size:clamp(.55rem,1.6vw,.8rem);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.units i{font-style:normal;font-weight:700;font-size:clamp(1.6rem,6vw,3.4rem);line-height:1.05;color:#8b948c}
+
+/* Toolbar */
+.tabs{flex-wrap:wrap;gap:.5rem;padding:.25rem 0}
+.tabs .btn{white-space:nowrap;position:relative;overflow:hidden;padding-bottom:.55rem;transition:box-shadow .2s}
+.tabs .btn.active{box-shadow:0 0 0 1px var(--glow),0 2px 8px #d3ea7a22}
+.tb{position:absolute;left:0;right:0;bottom:0;height:4px;background:#ffffff22}
+.tb i{display:block;height:100%;background:var(--glow);transition:width .4s}
+.tabs .btn.active .tb{background:#10180a33}.tabs .btn.active .tb i{background:#10180a}
+@media (max-width:991px){.toolbar{position:static}}
+.btn-chip{--bs-btn-color:var(--bone);--bs-btn-border-color:#ffffff30;--bs-btn-hover-bg:#ffffff14;--bs-btn-hover-color:var(--bone);--bs-btn-active-bg:var(--glow);--bs-btn-active-color:#10180a;--bs-btn-active-border-color:var(--glow);--bs-btn-padding-y:.35rem;font-size:.85rem;font-weight:500;transition:background .2s,border-color .2s,color .2s}
+.btn-chip small{opacity:.7;margin-left:.35rem}
+.btn-chip.active[data-imp="E"]{background:var(--glow)!important;color:#10180a!important;border-color:var(--glow)!important}
+.btn-chip.active[data-imp="H"]{background:var(--sage)!important;color:#10180a!important;border-color:var(--sage)!important}
+.btn-chip.active[data-imp="N"]{background:var(--grey)!important;color:var(--ink)!important;border-color:var(--grey)!important}
+
+.toolbar{position:sticky;top:0;z-index:20;background:#050a07ee;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:.75rem 0;transition:box-shadow .3s}
+.toolbar.scrolled{box-shadow:0 .5rem 1.5rem #0006}
+.form-control,.form-select{background-color:#0b130e;border-color:#ffffff30;font-size:.85rem}
+input[type="search"]::-webkit-search-cancel-button{filter:invert(1) opacity(.5);cursor:pointer;appearance:auto}
+
+.summary{display:flex;flex-wrap:wrap;gap:.5rem 2rem;align-items:center;padding:1.5rem 0 .5rem}
+.summary strong{font-family:'Fraunces',serif;font-size:1.6rem}
+.progress{height:.4rem;background:#ffffff14;flex:1 1 14rem;overflow:hidden}
+.progress-bar{background:var(--glow);background-image:linear-gradient(90deg,var(--glow),#e4f59a,var(--glow));background-size:200% 100%;animation:progress-shine 3s linear infinite;transition:width .4s}
+
+/* Phase headings */
+.phase{margin:2.5rem 0 .25rem;display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.phase h2{font-size:1.6rem;font-weight:700;margin:0;transition:color .3s}
+.phase span{color:var(--muted);font-size:.85rem}
+.phase.phase-done h2{color:var(--glow)}
+.phase.phase-done h2::after{content:" \2713";font-size:.65em;font-weight:700}
+
+/* Timeline road */
+ul.road{list-style:none;margin:0;padding:0 0 0 2.4rem;position:relative}
+ul.road::before{content:"";position:absolute;left:.8rem;top:.5rem;bottom:.5rem;width:2px;
+  background:linear-gradient(to bottom,var(--line) 0%,var(--line) 85%,transparent 100%)}
+.stop{position:relative;display:flex;align-items:center;gap:1rem;padding:.85rem 0;border-bottom:1px solid #ffffff0d;flex-wrap:wrap;transition:background .2s}
+.stop:hover{background:#ffffff06;border-radius:.3rem}
+.stop:hover .info h3{color:var(--glow);transition:color .2s}
+.node{position:absolute;left:-2.4rem;top:2rem;translate:0 -50%;width:1.7rem;height:1.7rem;border-radius:50%;border:3px solid var(--grey);background:var(--ink);color:#10180a;display:grid;place-items:center;padding:0;font-size:.85rem;font-weight:700;cursor:pointer;transition:background .25s,transform .15s,border-color .25s}
+.node:hover{transform:scale(1.12)}
+.node:active{transform:scale(.9)}
+.imp-E .node{border-color:var(--glow)}.imp-H .node{border-color:var(--sage)}
+.done .node{background:var(--glow);border-color:var(--glow);color:var(--ink);box-shadow:0 0 0 4px #d3ea7a12}
+.stop.done{background:#7fb08a12;border-radius:.5rem;box-shadow:inset 3px 0 0 #7fb08a55;padding-left:.65rem;padding-right:.65rem}
+.stop.done:hover{background:#7fb08a1c}
+.info{flex:1;min-width:0;cursor:pointer}
+.info h3{font-size:1.1rem;font-weight:700;margin:0;transition:color .2s}
+.done .info h3{color:var(--bone)}
+.meta{display:flex;flex-wrap:wrap;gap:.2rem 1rem;color:var(--muted);font-size:.8rem;margin-top:.15rem}
+.tag{font-size:.75rem;font-weight:600;padding:.15rem .6rem;border-radius:1rem;border:1px solid currentColor;white-space:nowrap;letter-spacing:.02em}
+.imp-E .tag{color:var(--glow)}.imp-H .tag{color:var(--sage)}.imp-N .tag{color:var(--grey)}
+.chev{margin-left:auto;background:none;border:0;color:var(--muted);padding:.25rem;border-radius:50%;line-height:0;transition:transform .2s,color .2s}
+.chev:hover{color:var(--glow)}
+.open .chev{transform:rotate(180deg);color:var(--glow)}
+.detail{flex-basis:100%;padding:.25rem 0 .4rem}
+.detail[hidden]{display:none}
+.about{color:#d4dbd1;font-size:.95rem;line-height:1.65;margin:0 0 .85rem;max-width:46rem;text-wrap:pretty}
+.rates{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.1rem}
+.sc{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;color:var(--muted)}
+.sc svg{width:1.3rem;height:1.3rem;flex:none}
+.sc b{font-size:.95rem}
+.sc.f b{color:#ff6a4d}.sc.r b{color:#8ad66b}
+.rate{display:inline-flex;align-items:center;gap:.35rem;font-size:.85rem;font-weight:600}
+.rate[hidden]{display:none}
+.im{font-style:normal;background:#f5c518;color:#111;font-weight:800;font-size:.65rem;padding:0 .3rem;border-radius:.2rem;line-height:1.35}
+.imdb-link{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:.4rem .7rem;border:1px solid #f5c51866;border-radius:.35rem;background:#f5c51812;font-size:.8rem;font-weight:600;text-decoration:none;color:#f5c518}
+.imdb-link:hover{background:#f5c51825}
+.imdb-link:hover,.more:hover{text-decoration:underline}
+.more{font-size:.8rem;font-weight:600;color:var(--glow);text-decoration:none;margin-left:auto}
+
+/* Empty state */
+.empty{text-align:center;padding:3rem 0;color:var(--muted)}
+.empty svg{opacity:.4;margin-bottom:.5rem}
+.empty button{margin-top:.75rem}
+
+footer{padding:3rem 0;color:var(--muted);font-size:.85rem}
+.credit{border-bottom:1px solid var(--line)}
+.credit strong{color:var(--bone);font-family:'Fraunces',serif;font-size:1.15rem}
+.credit a{color:var(--bone);text-decoration:none;border-bottom:1px solid var(--glow);padding-bottom:1px}
+.credit a:hover{color:var(--glow)}
+
+/* ── Mobile ── */
+@media (max-width:575px){
+  .tabs{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;-webkit-overflow-scrolling:touch}
+  .tabs .btn{flex:none;scroll-snap-align:start;white-space:nowrap;line-height:1.25;padding-inline:.5rem}
+  .tabs .btn small{display:inline;margin:0}
+  .toolbar .row{gap:.5rem}
+  .toolbar .form-select,.toolbar .form-control{font-size:.8rem}
+  .stop{flex-wrap:wrap;gap:.4rem .8rem}
+  .info{flex-basis:100%}
+}
+@media (pointer:coarse){
+  .node{width:2rem;height:2rem}
+  .chev{padding:.5rem}
+  .btn-chip{padding:.5rem .8rem}
+}
+</style>
+<link rel="stylesheet" href="support.css">
+<script src="support.js" defer></script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container d-flex flex-column flex-grow-1">
+    <div class="brand">Road to Doomsday</div>
+    <div class="hero-main">
+      <div>
+        <h1>The road to<br>Avengers:<br>Doomsday</h1>
+        <p class="lede">Every film and series that leads to December 18, 2026. Tick off what you have seen and the guide keeps count on this device.</p>
+        <a class="btn btn-glow" href="#guide">Start the road</a>
+      </div>
+    </div>
+    <div class="count" role="timer" aria-label="Time until Avengers: Doomsday">
+      <p class="coming">Doomsday is coming</p>
+      <div class="units">
+        <div class="u"><b id="c-mo">00</b><span>Months</span></div><i>:</i>
+        <div class="u"><b id="c-d">00</b><span>Days</span></div><i>:</i>
+        <div class="u"><b id="c-h">00</b><span>Hours</span></div><i>:</i>
+        <div class="u"><b id="c-m">00</b><span>Min</span></div><i>:</i>
+        <div class="u"><b id="c-s">00</b><span>Sec</span></div>
+      </div>
+    </div>
+  </div>
+  <a href="#guide" class="scroll-cue" aria-label="Scroll to guide">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+  </a>
+</header>
+
+<div id="guide" class="toolbar">
+  <div class="container">
+    <div class="d-flex tabs mb-2" id="tabs" role="tablist" aria-label="Collections"></div>
+    <div class="row g-2 align-items-center">
+      <div class="col-12 col-lg">
+        <div class="d-flex flex-wrap gap-2" role="group" aria-label="Importance">
+          <button class="btn btn-chip" data-imp="all">All</button>
+          <button class="btn btn-chip" data-imp="E">Essential</button>
+          <button class="btn btn-chip" data-imp="H">Highly recommended</button>
+          <button class="btn btn-chip" data-imp="N">Non-essential</button>
+        </div>
+      </div>
+      <div class="col-6 col-lg-auto">
+        <select class="form-select form-select-sm" id="sort" aria-label="Sort order">
+          <option value="release">Release order</option>
+          <option value="story">Story order</option>
+          <option value="new">Newest first</option>
+        </select>
+      </div>
+      <div class="col-6 col-lg-auto"><input class="form-control form-control-sm" id="q" type="search" placeholder="Search a title" aria-label="Search a title"></div>
+      <div class="col-12 col-lg-auto">
+        <div class="form-check form-switch mb-0"><input class="form-check-input" type="checkbox" id="unw"><label class="form-check-label small" for="unw">Hide watched</label></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="container pb-5">
+  <div class="summary" id="summary"></div>
+  <div id="list"></div>
+</main>
+
+<section class="container support-section" aria-labelledby="support-heading">
+  <div class="support-panel">
+    <p class="support-eyebrow">Keep the road going</p>
+    <h2 id="support-heading">Support this project</h2>
+    <p class="support-intro">Enjoying the guide? A little support helps me keep building and improving it. Every contribution is optional, and the guide stays free to use.</p>
+    <div class="support-options">
+      <div class="support-option">
+        <h3 class="support-method"><span class="support-logo support-logo-paypal"><img src="paypal-logo.png" alt="" loading="lazy" width="1817" height="1266"></span>PayPal</h3>
+        <p>Support Abdallah Assem through PayPal.<br><span>AbdallahAssem849</span></p>
+        <a class="support-action support-paypal" href="https://www.paypal.com/paypalme/AbdallahAssem849" target="_blank" rel="noopener noreferrer">Support with PayPal <span aria-hidden="true">&#8599;</span></a>
+      </div>
+      <div class="support-option">
+        <h3 class="support-method"><span class="support-logo"><img src="instapay-logo.png" alt="" loading="lazy" width="512" height="512"></span>InstaPay</h3>
+        <p>Copy this payment address and use it in your InstaPay app.</p>
+        <label class="visually-hidden" for="support-instapay">InstaPay payment address</label>
+        <input class="support-address" id="support-instapay" value="abdallahassem3@instapay" readonly spellcheck="false" autocomplete="off">
+        <button class="support-action" type="button" data-copy-instapay>Copy InstaPay address</button>
+      </div>
+    </div>
+    <p class="support-status" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<footer>
+  <div class="container credit pb-4 mb-4">
+    <p class="mb-2">Built by <strong>Abdallah Assem</strong></p>
+    <nav class="d-flex flex-wrap gap-3" aria-label="Abdallah Assem on the web">
+      <a href="https://abdallah-assem-portfolio.abdallahassem3.workers.dev/" target="_blank" rel="noopener">Portfolio</a>
+      <a href="http://www.linkedin.com/in/abdallah-assem" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Abdallah-Assem" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://facebook.com/abdallah.assem.7" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://instagram.com/abdallahassem_" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+  </div>
+  <div class="container d-flex flex-wrap justify-content-between gap-3">
+    <span>A fan-made guide. Not affiliated with Marvel Studios or Disney. Your progress stays in this browser.</span>
+    <div class="d-flex flex-wrap gap-2">
+      <button class="btn btn-sm btn-outline-secondary" id="export">Export progress</button>
+      <button class="btn btn-sm btn-outline-secondary" id="import">Import progress</button>
+      <button class="btn btn-sm btn-outline-secondary" id="reset">Clear my progress</button>
+      <input type="file" id="importFile" accept="application/json" hidden>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* Titles live in data.json: kind M MCU film, X X-Men, S Sony, W other Marvel films, T series. importance E/H/N. */
+const D=[];
+const TABS=[["M","MCU Films"],["X","X-Men"],["S","Sony"],["T","Shows"],["W","Elsewhere"],["A","Everything"]];
+const IMP={E:"Essential",H:"Highly recommended",N:"Non-essential"};
+const KIND={M:"MCU film",X:"X-Men universe",S:"Sony",W:"Marvel elsewhere",T:"Series or special"};
+const GL={X:"X-Men universe",S:"Sony's Spider-Man films",W:"Other Marvel adaptations",T:"Netflix, Hulu and Freeform"};
+const GKEYS=["1","2","3","4","5","6","7","0X","0S","0W","0T"];
+const gk=d=>d.p?String(d.p):"0"+d.k;
+const gl=k=>k[0]==="0"?GL[k[1]]:(k==="7"?"Re-releases":"Phase "+k);
+
+const KEY="roadToDoomsday.v2";
+const DEF={tab:"M",imp:"all",unw:false,sort:"release",q:"",watched:[]};
+let S=load();
+function load(){try{return Object.assign({},DEF,JSON.parse(localStorage.getItem(KEY)||"{}"))}catch(e){return Object.assign({},DEF)}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+const $=s=>document.querySelector(s);
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=m=>!m?"Airing now":m<60?m+"m":Math.floor(m/60)+"h "+String(m%60).padStart(2,"0")+"m";
+const inTab=d=>S.tab==="A"||d.k===S.tab;
+const base=t=>t.replace(/^Marvel One-Shot: /,"").replace(/ \(Season \d+\)$/,"");
+const imdbHref=d=>/^tt\d+$/.test(d.ii||"")?"https://www.imdb.com/title/"+d.ii+"/":"https://www.imdb.com/find/?s=tt&q="+encodeURIComponent(base(d.t)+(d.k==="T"?"":" "+d.y));
+const SV=(b)=>`<svg viewBox="0 0 24 24" aria-hidden="true">${b}</svg>`;
+const ICON={
+  tom:SV('<circle cx="12" cy="14" r="8" fill="#fa320a"/><path d="M12 6.5C11 4 8.5 3.5 7 4.3c1.3.4 2.3 1.4 3 2.7zm0 0c1-2.5 3.5-3 5-2.2-1.3.4-2.3 1.4-3 2.7z" fill="#5cb85c"/>'),
+  rot:SV('<path d="M12 3.5c2.6 0 3.6 2 5.6 3s3.4 4.1 1.6 7.1-4 5.9-7.6 5.9-7-2.2-7-6.2 2-5.9 4.8-7.9z" fill="#6ac34a"/>'),
+  pop:SV('<circle cx="8" cy="8" r="3" fill="#ffe29a"/><circle cx="12" cy="6.5" r="3.2" fill="#fff1bd"/><circle cx="16" cy="8" r="3" fill="#ffe29a"/><path d="M5.8 10h12.4l-1.7 11.5H7.5z" fill="#fa320a"/><path d="M9.6 10l.7 11.5M14.4 10l-.7 11.5" stroke="#fff" stroke-width="1.5"/>'),
+  popr:SV('<path d="M5.8 10h12.4l-1.7 11.5H7.5z" fill="#6ac34a"/><path d="M9.6 10l.7 11.5M14.4 10l-.7 11.5" stroke="#fff" stroke-width="1.5"/>')
+};
+function rates(d){
+  const sc=(v,lab,good,bad)=>v==null?"":`<span class="sc ${v<60?"r":"f"}">${v<60?bad:good}<b>${v}%</b>${lab}</span>`;
+  const im=`<span class="rate" title="${d.ib?(d.k==="T"?"IMDb rating for the whole series":"IMDb rating"):"IMDb rating unavailable"}"><i class="im">IMDb</i>${d.ib?Number(d.ib).toFixed(1):"N/A"}</span>`;
+  return `<div class="rates">${sc(d.rc,"Critic",ICON.tom,ICON.rot)}${sc(d.ra,"Audience",ICON.pop,ICON.popr)}${im}
+    <a class="imdb-link" href="${imdbHref(d)}" target="_blank" rel="noopener" aria-label="Open ${esc(d.t)} on IMDb">IMDb &#8599;</a>
+    <a class="more" href="details.html?id=${encodeURIComponent(d.id)}">Read more &rarr;</a></div>`;
+}
+const sortMode=()=>S.sort==="story"&&S.tab!=="M"?"release":S.sort;
+
+function visible(){
+  const a=D.filter(d=>inTab(d)&&
+    !(S.imp!=="all"&&d.i!==S.imp)&&
+    !(S.unw&&S.watched.includes(d.id))&&
+    !(S.q&&!d.t.toLowerCase().includes(S.q.toLowerCase())));
+  const m=sortMode();
+  if(m==="story")a.sort((x,y)=>x.s-y.s);
+  else if(m==="new")a.sort((x,y)=>y.y-x.y);
+  else a.sort((x,y)=>x.y-y.y);
+  return a;
+}
+const OPEN=new Set();
+function row(d){
+  const w=S.watched.includes(d.id),o=OPEN.has(d.id);
+  return `<li class="stop imp-${d.i} ${w?"done":""} ${o?"open":""}" data-id="${esc(d.id)}">
+    <button class="node" data-w="${esc(d.id)}" aria-pressed="${w}" title="${w?'Mark as unwatched':'Mark as watched'}" aria-label="Mark ${esc(d.t)} as ${w?'unwatched':'watched'}">${w?"&#10003;":""}</button>
+    <div class="info"><h3>${esc(d.t)}</h3><div class="meta"><span>${d.y}</span><span>${fmt(d.m)}</span>${S.tab==="A"?`<span>${KIND[d.k]}</span>`:""}</div></div>
+    <span class="tag">${IMP[d.i]}</span>
+    <button class="chev" data-x="${esc(d.id)}" aria-expanded="${o}" aria-label="Show details for ${esc(d.t)}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="detail" ${o?"":"hidden"}>${d.a?`<p class="about">${esc(d.a)}</p>`:""}${rates(d)}</div>
+  </li>`;
+}
+function toggleOpen(li){
+  const id=li.dataset.id,o=!OPEN.has(id);
+  o?OPEN.add(id):OPEN.delete(id);
+  li.classList.toggle("open",o);
+  li.querySelector(".detail").hidden=!o;
+  li.querySelector(".chev").setAttribute("aria-expanded",o);
+}
+function renderList(){
+  const scope=D.filter(inTab),ess=scope.filter(d=>d.i==="E"),left=ess.filter(d=>!S.watched.includes(d.id));
+  const w=scope.filter(d=>S.watched.includes(d.id)).length,pct=Math.round(w/scope.length*100);
+  $("#summary").innerHTML=`<div><strong>${w} of ${scope.length}</strong> watched</div>
+    <div class="text-secondary small">${!ess.length?"Nothing here is marked essential. Watch what you like.":left.length?`${left.length} essential left, about ${fmt(left.reduce((n,d)=>n+d.m,0))} of viewing.`:"Every essential title here is done."}</div>
+    <div class="progress" role="progressbar" aria-label="Watched in this collection" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:${pct}%"></div></div>`;
+  const a=visible();let html="";
+  if(!a.length){
+    const allWatched=S.unw&&scope.length>0&&scope.every(d=>S.watched.includes(d.id));
+    html=allWatched
+      ?`<div class="empty"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg><p>You've watched everything in this collection! Toggle "Hide watched" off to review.</p></div>`
+      :`<div class="empty"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><p>Nothing matches these filters.</p><button class="btn btn-sm btn-outline-secondary" id="clearFilters">Clear filters</button></div>`;
+  }
+  else if(sortMode()==="release"){
+    GKEYS.forEach(k=>{
+      const g=a.filter(d=>gk(d)===k);if(!g.length)return;
+      const all=scope.filter(d=>gk(d)===k),n=all.filter(d=>S.watched.includes(d.id)).length;
+      const doneCls=n===all.length&&all.length>0?"phase-done":"";
+      html+=`<div class="phase ${doneCls}"><h2>${gl(k)}</h2><span>${n} of ${all.length} watched</span></div><ul class="road">${g.map(row).join("")}</ul>`;
+    });
+  }else html=`<ul class="road mt-4">${a.map(row).join("")}</ul>`;
+  $("#list").innerHTML=html;
+}
+function render(){
+  $("#tabs").innerHTML=TABS.map(([k,n])=>{
+    const sc=D.filter(d=>k==="A"||d.k===k),w=sc.filter(d=>S.watched.includes(d.id)).length,p=sc.length?Math.round(w/sc.length*100):0;
+    return `<button class="btn btn-chip ${S.tab===k?"active":""}" data-tab="${k}" role="tab" aria-selected="${S.tab===k}" title="${w} of ${sc.length} watched">${n}<small>${sc.length}</small><span class="tb" role="progressbar" aria-label="${n} watched" aria-valuenow="${p}" aria-valuemin="0" aria-valuemax="100"><i style="width:${p}%"></i></span></button>`;
+  }).join("");
+  document.querySelectorAll("[data-imp]").forEach(b=>b.classList.toggle("active",b.dataset.imp===S.imp));
+  const st=$("#sort").querySelector('[value="story"]');st.hidden=st.disabled=S.tab!=="M";
+  $("#sort").value=sortMode();$("#unw").checked=S.unw;$("#q").value=S.q;
+  renderList();
+}
+const toggle=(a,id)=>{const i=a.indexOf(id);i>-1?a.splice(i,1):a.push(id)};
+document.addEventListener("click",e=>{
+  if(e.target.closest("#clearFilters")){
+    S.imp="all";S.q="";S.unw=false;$("#q").value="";$("#unw").checked=false;
+    document.querySelectorAll("[data-imp]").forEach(b=>b.classList.toggle("active",b.dataset.imp==="all"));
+    save();renderList();return;
+  }
+  const inf=e.target.closest(".info");
+  if(inf&&!e.target.closest("a,button")){toggleOpen(inf.closest("li"));return}
+  const b=e.target.closest("button");if(!b)return;
+  if(b.dataset.x!==undefined){toggleOpen(b.closest("li"));return}
+  if(b.dataset.w!==undefined)toggle(S.watched,b.dataset.w);
+  else if(b.dataset.tab)S.tab=b.dataset.tab;
+  else if(b.dataset.imp)S.imp=b.dataset.imp;
+  else if(b.id==="export"){
+    const a=document.createElement("a");
+    a.href=URL.createObjectURL(new Blob([JSON.stringify({watched:S.watched},null,2)],{type:"application/json"}));
+    a.download="road-to-doomsday-progress.json";a.click();URL.revokeObjectURL(a.href);return;
+  }
+  else if(b.id==="import"){$("#importFile").click();return}
+  else if(b.id==="reset"){if(!confirm("Clear everything you have marked on this device?"))return;S=Object.assign({},DEF,{watched:[]})}
+  else return;
+  save();render();
+});
+ $("#importFile").addEventListener("change",e=>{
+  const f=e.target.files[0];if(!f)return;
+  f.text().then(t=>{
+    const j=JSON.parse(t),ok=a=>Array.isArray(a)&&a.every(x=>typeof x==="string");
+    if(!ok(j.watched))throw 0;
+    S.watched=j.watched;save();render();
+  }).catch(()=>alert("That file is not a valid progress export.")).finally(()=>{e.target.value=""});
+});
+ $("#sort").addEventListener("change",e=>{S.sort=e.target.value;save();render()});
+ $("#unw").addEventListener("change",e=>{S.unw=e.target.checked;save();renderList()});
+
+/* Debounced search */
+let searchTimer;
+ $("#q").addEventListener("input",e=>{
+  clearTimeout(searchTimer);
+  searchTimer=setTimeout(()=>{S.q=e.target.value;save();renderList()},150);
+});
+
+/* Sticky toolbar shadow on scroll */
+window.addEventListener("scroll",()=>{$("#guide").classList.toggle("scrolled",window.scrollY>10)},{passive:true});
+
+/* Countdown to December 18, 2026, split into calendar months, days, hours, minutes and seconds */
+const T=new Date("2026-12-18T00:00:00"),pad=n=>String(n).padStart(2,"0");
+function tick(){
+  const now=new Date();let mo=0,ms=Math.max(0,T-now);
+  if(T>now){
+    mo=(T.getFullYear()-now.getFullYear())*12+T.getMonth()-now.getMonth();
+    let a=new Date(now);a.setMonth(a.getMonth()+mo);
+    if(a>T){mo--;a=new Date(now);a.setMonth(a.getMonth()+mo)}
+    ms=T-a;
+  }
+  const v={mo,d:Math.floor(ms/864e5),h:Math.floor(ms/36e5)%24,m:Math.floor(ms/6e4)%60,s:Math.floor(ms/1e3)%60};
+  for(const k in v)$("#c-"+k).textContent=pad(v[k]);
+}
+function loadData(){
+  fetch("data.json").then(r=>{if(!r.ok)throw 0;return r.json()}).then(rows=>{
+    rows.forEach(r=>{
+      const d={k:r.kind,t:r.title,y:r.year,m:r.minutes,i:r.importance||"N",p:r.phase||0,s:r.story,rc:r.rtCritic,ra:r.rtAudience,a:r.about,ib:r.imdbRating,ii:r.imdbId,id:r.kind+"|"+r.title};
+      D.push(d);
+    });
+    render();
+  }).catch(()=>{$("#list").innerHTML='<p class="empty">Could not load data.json. Serve this folder over HTTP (for example with VS Code Live Server) or publish it on GitHub Pages.</p>'});
+}
+window.addEventListener("storage",e=>{if(e.key===KEY||e.key===null){S=load();if(D.length)render()}});
+window.addEventListener("pageshow",()=>{S=load();if(D.length)render()});
+tick();setInterval(tick,1000);loadData();
+</script>
+</body>
+</html>
